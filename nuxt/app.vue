@@ -1,6 +1,14 @@
 <template>
-  <h1 class="nuxt__title">テストタイトル</h1>
-  <div></div>
+  <h1 class="nuxt__title">Title</h1>
+  <div class="container">
+    <h2 class="container__title">Container Title</h2>
+    <p class="container__text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quo.
+      Saepe ab qui accusamus mollitia libero laudantium itaque velit, recusandae
+      consectetur est. Velit voluptatem omnis, vero nostrum libero laudantium
+      excepturi?
+    </p>
+  </div>
 </template>
 <style>
 body {
