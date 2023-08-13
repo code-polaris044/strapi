@@ -2,6 +2,7 @@
   <h1 class="nuxt__title">Title</h1>
   <div class="container">
     <h2 class="container__title">Container Title</h2>
+    <hr />
     <p class="container__text">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quo.
       Saepe ab qui accusamus mollitia libero laudantium itaque velit, recusandae
@@ -9,7 +10,19 @@
       excepturi?
     </p>
   </div>
+  <h2 v-for="item in data" :key="item.id">{{ item.title }}></h2>
 </template>
+
+<script>
+export default {
+  async asyncData({ params }) {
+    const response = await axios.get("");
+    return {
+      data: response.data,
+    };
+  },
+};
+</script>
 <style>
 body {
   height: 200px;
@@ -26,5 +39,21 @@ body {
   font-size: 32px;
   font-weight: 400;
   text-align: center;
+}
+
+.container {
+  width: min(100%, 1120px - 80px);
+  margin: 0 auto;
+
+  .container__title {
+    color: aliceblue;
+    border-left: 2px solid aliceblue;
+    padding-left: 1em;
+    margin-bottom: 60px;
+  }
+
+  .container__text {
+    color: bisque;
+  }
 }
 </style>
