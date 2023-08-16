@@ -10,13 +10,16 @@
       excepturi?
     </p>
   </div>
-  <h2 v-for="item in data" :key="item.id">{{ item.title }}></h2>
+  <div class="api__container">
+    <h2 v-for="item in data" :key="item.id">{{ item.title }}></h2>
+    <p class="api__text">api テキスト</p>
+  </div>
 </template>
 
 <script>
 export default {
   async asyncData({ params }) {
-    const response = await axios.get("");
+    const response = await axios.get("http://localhost:1337/api/test/cat/");
     return {
       data: response.data,
     };
@@ -43,7 +46,7 @@ body {
 
 .container {
   width: min(100%, 1120px - 80px);
-  margin: 0 auto;
+  margin: 0 auto 60px;
 
   .container__title {
     color: aliceblue;
@@ -55,5 +58,10 @@ body {
   .container__text {
     color: bisque;
   }
+}
+
+.api__text {
+  text-align: center;
+  color: bisque;
 }
 </style>
